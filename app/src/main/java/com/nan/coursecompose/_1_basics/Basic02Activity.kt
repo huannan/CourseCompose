@@ -4,23 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.safeContentPadding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
-import com.nan.coursecompose.R
 
 private const val TAG = "Basic02Activity"
 
@@ -31,33 +14,104 @@ class Basic02Activity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            Column(Modifier.safeContentPadding()) {
-                var name by remember { mutableStateOf("huannan") }
-                Text(name, Modifier.background(Color.Yellow), fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            // Column(Modifier.safeContentPadding()) {
+            //     var name by remember { mutableStateOf("huannan") }
+            //     Text(name, Modifier.background(Color.Yellow), fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            //
+            //     Image(painterResource(R.drawable.avatar_rengwuxian), "头像")
+            //
+            //     var buttonText by remember { mutableStateOf("点我") }
+            //     Button({
+            //         buttonText = "点了"
+            //     }) {
+            //         Text(buttonText)
+            //     }
+            // }
 
-                Image(painterResource(R.drawable.avatar_rengwuxian), "头像")
+            // Row(Modifier.safeContentPadding()) {
+            //     var name by remember { mutableStateOf("huannan") }
+            //     Text(name, Modifier.background(Color.Yellow), fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            //
+            //     Image(painterResource(R.drawable.avatar_rengwuxian), "头像")
+            //
+            //     var buttonText by remember { mutableStateOf("点我") }
+            //     Button({
+            //         buttonText = "点了"
+            //     }) {
+            //         Text(buttonText)
+            //     }
+            // }
 
-                var buttonText by remember { mutableStateOf("点我") }
-                Button({
-                    buttonText = "点了"
-                }) {
-                    Text(buttonText)
-                }
-            }
+            // Box {
+            //     var name by remember { mutableStateOf("huannan") }
+            //     Text(name, Modifier.background(Color.Yellow), fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            //
+            //     Image(painterResource(R.drawable.avatar_rengwuxian), "头像")
+            //
+            //     var buttonText by remember { mutableStateOf("点我") }
+            //     Button({
+            //         buttonText = "点了"
+            //     }) {
+            //         Text(buttonText)
+            //     }
+            // }
 
-            Row(Modifier.safeContentPadding()) {
-                var name by remember { mutableStateOf("huannan") }
-                Text(name, Modifier.background(Color.Yellow), fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            // val nums = (1..50).toList()
+            // LazyColumn(
+            //     Modifier
+            //         .background(Color.Blue)
+            //         .height(200.dp)
+            // ) {
+            //     item {
+            //         Text("我是头部")
+            //     }
+            //     items(nums) {
+            //         Text("第 $it 个选项")
+            //     }
+            //     item {
+            //         Text("我是尾部")
+            //     }
+            // }
 
-                Image(painterResource(R.drawable.avatar_rengwuxian), "头像")
+            // val nums = (1..10).toList()
+            // LazyRow(
+            //     Modifier
+            //         .background(Color.Blue)
+            //         .width(300.dp)
+            //         .safeContentPadding()
+            // ) {
+            //     item {
+            //         Text("我是头部")
+            //     }
+            //     items(nums) {
+            //         Text("第 $it 个选项")
+            //     }
+            //     item {
+            //         Text("我是尾部")
+            //     }
+            // }
 
-                var buttonText by remember { mutableStateOf("点我") }
-                Button({
-                    buttonText = "点了"
-                }) {
-                    Text(buttonText)
-                }
-            }
+            // val nums = (1..20).toList()
+            // Column(
+            //     Modifier
+            //         .background(Color.Yellow)
+            //         .height(200.dp)
+            //         .verticalScroll(rememberScrollState())
+            // ) {
+            //     Text("我是头部")
+            //     nums.forEach {
+            //         Text("第 $it 个选项")
+            //     }
+            //     Text("我是尾部")
+            // }
+
+            // HorizontalPager(rememberPagerState { 4 }) {
+            //
+            // }
+
+            // VerticalPager(rememberPagerState { 4 }) {
+            //
+            // }
         }
     }
 }
@@ -85,11 +139,13 @@ ConstraintLayout
     Compose里面也有ConstraintLayout，但是不推荐使用
 ScrollView
     预先加载好的布局，现有组件套一层就自动变成可滑动
-       Modifier
+       Modifier.verticalScroll(rememberScrollState())
+       Modifier.horizontalScroll(rememberScrollState())
 RecyclerView
     按需的动态的懒加载布局
     LazyColumn
     LazyRow
 ViewPager
-    HotizontalPager
+    HorizontalPager
+    VerticalPager
  */
